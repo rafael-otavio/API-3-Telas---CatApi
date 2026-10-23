@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore fotos de gatos por raça.">
+  <title>Galeria de Gatos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" data-screen="inicio" aria-label="Galeria de Gatos, início">Galeria de Gatos</a>
+    <nav>
+      <button class="nav-link active" data-screen="inicio">Início</button>
+      <button class="nav-link" data-screen="busca">Buscar gatos</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tela-inicio" class="screen hero">
+      <div class="hero-copy">
+        <span class="eyebrow">UNIVERSO FELINO</span>
+        <h1>Encontre seu<br><span>gato favorito.</span></h1>
+        <p>Explore imagens de diferentes raças e descubra novos companheiros felinos com a TheCatAPI.</p>
+        <button class="primary-btn" data-screen="busca">Explorar galeria <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="https://cdn2.thecatapi.com/images/MTY3OD IyNw.jpg" alt="Gato em destaque" onerror="this.src='https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85'">
+        <div class="floating-note">Feito para quem gosta gatos</div>
+      </div>
+    </section>
+
+    <section id="tela-busca" class="screen page-section hidden">
+      <div class="section-heading">
+        <span class="eyebrow">EXPLORE AS RAÇAS</span>
+        <h1>Qual gato você quer conhecer?</h1>
+        <p>Digite o nome de uma raça em português ou inglês. Você também pode buscar todas as raças.</p>
+      </div>
+      <form id="busca-form" class="search-form">
+        <label class="sr-only" for="racaInput">Raça do gato</label>
+        <input id="racaInput" type="search" placeholder="Ex.: Siamês, Persa, Maine Coon..." autocomplete="off">
+        <button class="primary-btn" type="submit">Buscar</button>
+      </form>
+      <div class="toolbar">
+        <p id="resultado-status" role="status">Carregue a galeria para começar.</p>
+        <button id="todosBtn" class="text-btn" type="button">Ver todos os gatos</button>
+      </div>
+      <div id="galeria-container" class="gallery"></div>
+    </section>
+
+    <section id="tela-detalhes" class="screen page-section hidden">
+      <button id="voltarBtn" class="back-btn" type="button">← Voltar à galeria</button>
+      <div id="detalhes-container" class="details-card"></div>
+    </section>
+  </main>
+
+  <footer>TheCatAPI</footer>
+</body>
+</html>
